@@ -88614,7 +88614,7 @@ n=A.b6(10)
 n=A.x(i,A.bq(g,B.bR,i,B.A,B.ct,i,i),B.aA,i,i,new A.H(i,i,i,n,i,i,B.k),i,100,i,i,i,i,170)
 r=A.W(i,A.c(a,i,f).w.a.b*0.01,i)
 l=A.m(a).at.a
-l=A.au(!1,i,!0,A.aO(A.a([n,r,A.bk(A.l(204,l>>>16&255,l>>>8&255,l&255),h,1,B.y,10,!0,"Karthik's MacBook Pro",i)],o),B.J,B.m,B.i),i,!0,i,i,i,i,i,i,i,i,i,i,new A.ato(),i,i,i,i)
+l=A.au(!1,i,!0,A.aO(A.a([n,r,A.bk(A.l(204,l>>>16&255,l>>>8&255,l&255),h,1,B.y,10,!0,"Karthik's MBP",i)],o),B.J,B.m,B.i),i,!0,i,i,i,i,i,i,i,i,i,i,new A.ato(),i,i,i,i)
 r=A.b6(10)
 r=A.x(i,A.bq(g,B.bR,i,B.A,B.ct,i,i),B.aA,i,i,new A.H(i,i,i,r,i,i,B.k),i,100,i,i,i,i,170)
 n=A.W(i,A.c(a,i,f).w.a.b*0.01,i)
@@ -88638,7 +88638,7 @@ A.atk.prototype={
 $0(){this.a.Ia("https://www.youtube.com/embed/GEZhD3J89ZE?start=4207&autoplay=1&enablejsapi=1")},
 $S:0}
 A.atl.prototype={
-$0(){this.a.akw('<a class="twitter-timeline" href="https://twitter.com/karthikrocksta?ref_src=twsrc%5Etfw">Tweets by karthikrocksta</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>')},
+$0(){this.a.akw('<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">just setting up my twitter</p>&mdash; Karthik (@karthikrocksta) <a href="https://twitter.com/karthikrocksta">March 21, 2023</a><a class="twitter-timeline" href="https://twitter.com/karthikrocksta?ref_src=">Tweets by karthikrocksta</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></blockquote>')},
 $S:0}
 A.atm.prototype={
 $0(){var s=window
@@ -88677,7 +88677,7 @@ an(){var s,r,q=this
 q.d=q.a.c
 q.aD()
 s=q.r
-s.src="https://open.spotify.com/playlist/3n1moiig8xtRB4eYBEXxZx?si=823f1a68ff4e4a8e"
+s.src="https://open.spotify.com/embed/playlist/3n1moiig8xtRB4eYBEXxZx?si=823f1a68ff4e4a8e"
 r=s.style
 r.border="none"
 s.allow="autoplay; encrypted-media;"
