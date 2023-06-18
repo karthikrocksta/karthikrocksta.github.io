@@ -26671,7 +26671,7 @@ a7j:function a7j(){},
 pK:function pK(a,b){var _=this
 _.a=$
 _.b=a
-_.c="Finder"
+_.c="Karthik's MacBook Pro"
 _.Y$=0
 _.af$=b
 _.aL$=_.aQ$=0
@@ -91955,7 +91955,7 @@ this.B()
 this.Cm()},
 mj(a){return J.aNU(this.b,new A.a1Q(a))},
 Cm(){var s=this,r=s.b,q=J.aq(r)
-if(q.gaa(r))s.c="Finder"
+if(q.gaa(r))s.c="Karthik's MacBook Pro"
 else if(J.e(q.gN(r).a,new A.aT("finder")))s.c="Finder"
 else if(J.e(q.gN(r).a,new A.aT("safari")))s.c="Safari"
 else if(J.e(q.gN(r).a,new A.aT("spotify")))s.c="Spotify"
