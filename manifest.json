@@ -1,11 +1,11 @@
 {
-    "name": "chrishub",
-    "short_name": "chrishub",
+    "name": "Karthik's MacBook Pro",
+    "short_name": "K's MBP",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Karthik's portfolio built as a web Simulation of macOS Big Sur.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
