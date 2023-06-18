@@ -88677,7 +88677,7 @@ an(){var s,r,q=this
 q.d=q.a.c
 q.aD()
 s=q.r
-s.src="https://open.spotify.com/embed/playlist/2HBIMnwHxqq2Q79LFJkBtB"
+s.src="https://open.spotify.com/playlist/3n1moiig8xtRB4eYBEXxZx?si=823f1a68ff4e4a8e"
 r=s.style
 r.border="none"
 s.allow="autoplay; encrypted-media;"
