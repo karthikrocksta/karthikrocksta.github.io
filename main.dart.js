@@ -88591,7 +88591,7 @@ A.atY.prototype={
 $1(a){return A.BH(new A.atL(this.a),null,t.z)},
 $S:59}
 A.atL.prototype={
-$1(a){var s,r,q,p,o,n,m,l,k,j,i=null,h="SF",g="assets/caches/dream.jpg",f=t.w,e=A.c(a,i,f).w.a.b*0.08,d=A.c(a,i,f).w.a.a*0.06,c=A.c(a,i,f).w.a.a*0.06,b=A.m(a).at.a
+$1(a){var s,r,q,p,o,n,m,l,k,j,i=null,h="SF",g="assets/caches/hub.jpg",f=t.w,e=A.c(a,i,f).w.a.b*0.08,d=A.c(a,i,f).w.a.a*0.06,c=A.c(a,i,f).w.a.a*0.06,b=A.m(a).at.a
 b=A.bk(A.l(255,b>>>16&255,b>>>8&255,b&255),h,1,B.y,22,!0,"Favourites",A.m(a).p3.a.w)
 s=A.W(i,A.c(a,i,f).w.a.b*0.02,i)
 r=A.b6(10)
