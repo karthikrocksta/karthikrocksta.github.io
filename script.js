@@ -20,17 +20,17 @@ const initThreeJS = () => {
     const color1 = new THREE.Color(0x00f3ff); // Cyan
     const color2 = new THREE.Color(0xff0055); // Pink
 
-    for (let i = 0; i < particlesCount * 3; i+=3) {
+    for (let i = 0; i < particlesCount * 3; i += 3) {
         // Position
-        posArray[i] = (Math.random() - 0.5) * 60; 
-        posArray[i+1] = (Math.random() - 0.5) * 60; 
-        posArray[i+2] = (Math.random() - 0.5) * 60;
+        posArray[i] = (Math.random() - 0.5) * 60;
+        posArray[i + 1] = (Math.random() - 0.5) * 60;
+        posArray[i + 2] = (Math.random() - 0.5) * 60;
 
         // Mixed Colors
         const mixedColor = Math.random() > 0.5 ? color1 : color2;
         colorsArray[i] = mixedColor.r;
-        colorsArray[i+1] = mixedColor.g;
-        colorsArray[i+2] = mixedColor.b;
+        colorsArray[i + 1] = mixedColor.g;
+        colorsArray[i + 2] = mixedColor.b;
     }
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -116,7 +116,7 @@ const follower = document.querySelector('.cursor-follower');
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
-    
+
     setTimeout(() => {
         follower.style.left = e.clientX + 'px';
         follower.style.top = e.clientY + 'px';
@@ -165,4 +165,36 @@ VanillaTilt.init(document.querySelectorAll(".glass-card"), {
     speed: 400,
     glare: true,
     "max-glare": 0.2,
+});
+
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. Get Values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // 2. Simple Validation Check
+    if (name === "" || email === "" || message === "") {
+        showToast("Please fill in all fields", "error");
+        return;
+    }
+
+    // 3. Construct Mailto Link
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    
+    // Your verified email from the resume
+    const mailtoLink = `mailto:karthik810@gmail.com?subject=${subject}&body=${body}`;
+
+    // 4. Flutter-style Feedback
+    showToast("Opening Mail App...", "success");
+
+    // 5. Open Mail App after a slight delay for the "experience"
+    setTimeout(() => {
+        window.location.href = mailtoLink;
+    }, 800);
 });
