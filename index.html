@@ -1,48 +1,365 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/karthikrocksta.github.io/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="karthikrocksta_github_io">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>karthikrocksta_github_io</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Krishna Kumar | Senior Software Developer</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <script src='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.mjs' type='module'></script>
-  <script type='module'>
-  var { pdfjsLib } = globalThis;
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs';
 
-  var pdfRenderOptions = {
-    cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/',
-    cMapPacked: true,
-  }
-  </script>
-  <script src="flutter_bootstrap.js" async></script>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">Karthik<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-aos="zoom-out">Hi, I'm <span class="gradient-text">Karthik Krishna Kumar</span></h1>
+            <h2 data-aos="fade-up" data-aos-delay="200">I specialize in <span class="typewriter"></span></h2>
+            <p data-aos="fade-up" data-aos-delay="400">
+                Senior Software Developer (7+ Years) | Flutter & Native Specialist | Mechanical Engineer
+            </p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-delay="600">
+                <a href="#projects" class="btn glow-btn">View Work</a>
+                <a href="#contact" class="btn glass-btn">Contact Me</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="glass-card main-about" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="about-grid">
+                    <div class="about-img-wrapper" data-aos="zoom-in">
+                        <div class="about-img">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="about-text" data-aos="fade-left">
+                        <p class="highlight-p">
+                            Detail-oriented <strong>Mechanical Engineer</strong> turned <strong>Senior Software Developer</strong>.
+                        </p>
+                        <p>
+                            I specialize in bridging the gap between hardware logic and software fluidity. Currently leading front-end teams at <strong>NPST</strong>, I build robust banking Super Apps used by millions. My background in robotics and automation gives me a unique edge in debugging and architectural efficiency.
+                        </p>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-num">7+</span>
+                                <span class="stat-desc">Years Exp.</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">5M+</span>
+                                <span class="stat-desc">App Users</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">10+</span>
+                                <span class="stat-desc">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Timeline</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="glass-card content" data-tilt>
+                        <span class="date">Nov 2021 - Present</span>
+                        <h3>Senior Software Developer</h3>
+                        <h4>Network People Services Technologies (NPST)</h4>
+                        <ul>
+                            <li>Leading Front-end team for Mobile Banking Super Apps (Canara ai1, TimePay).</li>
+                            <li>Mentored 5+ mobile developers across Android, iOS, and Flutter.</li>
+                            <li>Architected solutions for 5M+ users involved in heavy transaction volumes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="glass-card content" data-tilt>
+                        <span class="date">Aug 2019 - Oct 2021</span>
+                        <h3>Senior Application Engineer</h3>
+                        <h4>TNS Electric Mobility Ventures</h4>
+                        <ul>
+                            <li>Designed and implemented cross-platform ride-sharing applications.</li>
+                            <li>Managed staging and production environments aligning with business roadmaps.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="glass-card content" data-tilt>
+                        <span class="date">Jan 2019 - Jul 2019</span>
+                        <h3>Full Stack Developer</h3>
+                        <h4>Hyper (Matra Ventures LLP)</h4>
+                        <ul>
+                            <li>Built micro-bots using Arduino & Raspberry Pi.</li>
+                            <li>Developed Home Automation instruments using Flutter, Firebase, and Python.</li>
+                            <li>Maintained WordPress and Shopify websites.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="glass-card content" data-tilt>
+                        <span class="date">Internships (2015-2016)</span>
+                        <h3>Engineering Intern</h3>
+                        <h4>Indian Oil & Micromax Systems</h4>
+                        <ul>
+                            <li><strong>Indian Oil:</strong> Worked on Mobile Flare Systems, PLC & SCADA Apps.</li>
+                            <li><strong>Micromax:</strong> PLC & DCS Turnkey Solutions, 2-Axis Robot logic.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Tech Stack</h2>
+            <div class="skills-grid">
+                
+                <div class="glass-card skill-box" data-aos="zoom-in">
+                    <i class="fab fa-flutter gradient-icon"></i>
+                    <h3>Flutter & Dart</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 95%"></div></div>
+                </div>
+
+                <div class="glass-card skill-box" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-java gradient-icon"></i>
+                    <h3>Java / J2EE</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+                </div>
+
+                <div class="glass-card skill-box" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-leaf gradient-icon"></i>
+                    <h3>Spring & Hibernate</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+                </div>
+
+                <div class="glass-card skill-box" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-database gradient-icon"></i>
+                    <h3>MySQL / JDBC</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+                </div>
+
+                <div class="glass-card skill-box" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-robot gradient-icon"></i>
+                    <h3>Robotics & IoT</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 75%"></div></div>
+                </div>
+
+                <div class="glass-card skill-box" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-code gradient-icon"></i>
+                    <h3>Web (HTML/CSS)</h3>
+                    <div class="progress-bar"><div class="fill" style="width: 90%"></div></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Work</h2>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="web">Web/Java</button>
+                <button class="filter-btn" data-filter="iot">IoT/Eng</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="glass-card project-card" data-category="mobile" data-tilt>
+                    <div class="project-content">
+                        <h3>Canara ai1</h3>
+                        <p class="role">Mobile Banking Super App</p>
+                        <p class="desc">Integrated 360+ features with a "One Bank, One App" vision. Built using Flutter/Native for high security and performance.</p>
+                        <div class="tags">
+                            <span>Flutter</span><span>Banking</span><span>Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="mobile" data-tilt>
+                    <div class="project-content">
+                        <h3>TimePay</h3>
+                        <p class="role">UPI Payment App</p>
+                        <p class="desc">In-house payment app featuring all modern UPI functionalities, QR scanning, and wallet management.</p>
+                        <div class="tags">
+                            <span>UPI</span><span>Fintech</span><span>Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="web" data-tilt>
+                    <div class="project-content">
+                        <h3>Collaboration Portal</h3>
+                        <p class="role">Enterprise Chat & Forum</p>
+                        <p class="desc">A platform for real-time chat, blogs, and forums using Java Enterprise tools (Spring, Hibernate, Tomcat).</p>
+                        <div class="tags">
+                            <span>Java</span><span>Spring</span><span>Tomcat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="web" data-tilt>
+                    <div class="project-content">
+                        <h3>Java Ecommerce</h3>
+                        <p class="role">Online Bookstore</p>
+                        <p class="desc">Complete bootstrap portal for buying books with features like user login, admin dashboard, and blog.</p>
+                        <div class="tags">
+                            <span>Bootstrap</span><span>J2EE</span><span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="iot" data-tilt>
+                    <div class="project-content">
+                        <h3>Solar Refrigerator</h3>
+                        <p class="role">Peltier Effect Prototype</p>
+                        <p class="desc">Solar-powered fridge using the Peltier effect with heat sync fundamentals and high capacitance power storage.</p>
+                        <div class="tags">
+                            <span>IoT</span><span>Electronics</span><span>Solar</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="edu-cert-grid">
+                
+                <div class="column" data-aos="fade-right">
+                    <h2 class="section-title left-align">Education</h2>
+                    <div class="glass-card list-card">
+                        <div class="list-item">
+                            <span class="year">2011 - 2015</span>
+                            <h3>B.Tech / B.E.</h3>
+                            <p>Noida International University, Noida</p>
+                            <p class="sub">School of Engineering and Technology</p>
+                        </div>
+                        <div class="list-item">
+                            <span class="year">2011</span>
+                            <h3>Higher Secondary (12th)</h3>
+                            <p>CBSE Board</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column" data-aos="fade-left">
+                    <h2 class="section-title left-align">Certifications & Languages</h2>
+                    <div class="glass-card list-card">
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h3>Embedded Systems & Robotics</h3>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h3>Ethical Hacking & Internet Security</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="languages-wrapper">
+                            <h4>Languages Spoken</h4>
+                            <div class="lang-tags">
+                                <span class="lang">English</span>
+                                <span class="lang">Hindi</span>
+                                <span class="lang">Tamil</span>
+                                <span class="lang">Telugu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="glass-card contact-box" data-aos="zoom-in">
+                <div class="contact-left">
+                    <h2>Let's Work Together</h2>
+                    <p>Open to opportunities in Mobile Architecture and Full Stack Development.</p>
+                    <div class="contact-row">
+                        <i class="fas fa-phone"></i>
+                        <span>(+91) 9971609929</span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>karthik810@gmail.com</span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tiruchirappalli, India</span>
+                    </div>
+                    <div class="socials">
+                        <a href="https://github.com/karthikrocksta" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" placeholder="Name" class="glass-input">
+                        <input type="email" placeholder="Email" class="glass-input">
+                        <textarea rows="4" placeholder="Message" class="glass-input"></textarea>
+                        <button type="submit" class="btn glow-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Karthik Krishna Kumar &copy; 2026</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
