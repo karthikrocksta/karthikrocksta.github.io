@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik | Solutions Architect • Artist</title>
+    <!-- <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=Karthik+Krishna+Kumar&background=0f172a&color=fff&size=128"> -->
+    <link rel="icon" type="image/png" href="profile.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand: #2563eb;
+            --bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: #0f172a;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .app-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(241, 245, 249, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid #e2e8f0;
+            margin-left: 8px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #fff;
+        }
+
+        .project-thumbnail {
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 16/9;
+            position: relative;
+        }
+
+        .project-thumbnail img {
+            transition: transform 0.5s ease;
+        }
+
+        .app-card:hover .project-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+
+        #contact-modal {
+            display: none;
+        }
+
+        #chat-window {
+            display: none;
+        }
+
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Smooth slide-up for bot */
+        .bot-slide-up {
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .chip {
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+        }
+
+        .chip:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        /* Responsive Safe Area Handling for Bot */
+        #chat-window {
+            max-height: 80vh;
+            /* Prevents overflow from top */
+            bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            #chat-window {
+                bottom: 100px;
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-blue-100">
+
+    <!-- App Bar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav h-16 flex items-center">
+        <div class="max-w-7xl mx-auto w-full px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Branding using image/initials -->
+                <div class="w-9 h-9 rounded-xl bg-slate-200 overflow-hidden border border-slate-200">
+                    <!-- <img src="https://ui-avatars.com/api/?name=Karthik+Krishna+Kumar&background=0f172a&color=fff&size=128" alt="KK"> -->
+                    <img src="profile.png" alt="KK">
+                </div>
+                <span class="font-extrabold text-sm tracking-tighter">KARTHIK <span
+                        class="text-blue-600">K.</span></span>
+            </div>
+            <div class="hidden md:flex gap-6 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Exp</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#education" class="hover:text-blue-600 transition">Edu</a>
+            </div>
+            <button onclick="openModal()"
+                class="bg-blue-600 text-white px-5 py-2.5 rounded-2xl text-[11px] font-bold hover:bg-slate-900 transition-all shadow-lg shadow-blue-100">LET'S
+                CONNECT</button>
+        </div>
+    </nav>
+
+    <!-- Mobile-Optimized Hero -->
+    <main id="about" class="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-extrabold uppercase tracking-tighter mb-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                    Available for Architecture Roles
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-[1] mb-6">
+                    Building <br><span class="text-gradient">Digital Ecosystems.</span>
+                </h1>
+                <!-- <p class="text-base text-slate-500 max-w-lg leading-relaxed mb-8">
+                    Sr. Software Developer at <span class="text-slate-900 font-semibold underline decoration-blue-200 underline-offset-4">NPST</span>. -->
+                <p class="text-base text-slate-500 max-w-lg leading-relaxed mb-8">
+                    Mechanical Engineer turned Digital Architect. I build scalable mobile and web apps and enterprise
+                    DevOps pipelines.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="openModal()"
+                        class="bg-slate-900 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-xl shadow-slate-200 hover:scale-[1.02] transition-transform">Hire
+                        ME</button>
+                    <a href="https://www.linkedin.com/in/karthikkkumar" target="_blank"
+                        class="bg-white border border-slate-200 px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 hover:bg-slate-50 transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="#projects"
+                        class="bg-white border border-slate-200 px-6 py-3 rounded-2xl font-bold text-sm hover:bg-slate-50 transition">View
+                        Projects</a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div
+                    class="relative w-full max-w-[320px] aspect-[1/1] bg-slate-200 rounded-[48px] shadow-2xl overflow-hidden border-[10px] border-white">
+                    <!-- <img src="https://ui-avatars.com/api/?name=Karthik+Krishna+Kumar&background=0f172a&color=fff&size=512" alt="Karthik Krishna Kumar" class="w-full h-full object-cover grayscale brightness-110"> -->
+                    <img src="profile.png" alt="Karthik Krishna Kumar"
+                        class="w-full h-full object-cover brightness-110">
+                    <div
+                        class="absolute bottom-4 left-4 right-4 p-4 bg-white/80 backdrop-blur-md rounded-3xl border border-white/50">
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Current Focus
+                        </p>
+                        <p class="text-[11px] font-bold text-slate-800">Scaling Infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- App Grid Stats -->
+    <section class="px-6 mb-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="app-card p-5 text-center">
+                <div class="text-2xl font-black text-blue-600">10+</div>
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Apps Built</div>
+            </div>
+            <div class="app-card p-5 text-center">
+                <div class="text-2xl font-black text-blue-600">5M+</div>
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Active Users</div>
+            </div>
+            <div class="app-card p-5 text-center">
+                <div class="text-2xl font-black text-blue-600">RHCA</div>
+                <div class="text-[10px] text-slate-400 font-bold uppercase">DevOps Arch</div>
+            </div>
+            <div class="app-card p-5 text-center">
+                <div class="text-2xl font-black text-blue-600">8+ y</div>
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline App View -->
+    <section id="experience" class="px-6 py-12 bg-white rounded-t-[40px]">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3">
+                <span class="w-8 h-1 bg-blue-600 rounded-full"></span>
+                Experience
+            </h2>
+            <div class="space-y-10">
+                <div class="timeline-item">
+                    <span class="text-[10px] font-black text-blue-600 uppercase">2021 — Present</span>
+                    <h3 class="font-extrabold text-lg mt-1">Sr. Software Developer</h3>
+                    <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">NPST Ltd.</p>
+                    <p class="text-sm text-slate-600 leading-snug">Built <span class="font-bold text-slate-900">Canara
+                            ai1</span> Super App. Managing frontend architecture
+                        for 360+ features and UPI ecosystem.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="text-[10px] font-black text-slate-400 uppercase">2019 — 2021</span>
+                    <h3 class="font-extrabold text-lg mt-1">Sr. Application Engineer</h3>
+                    <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">TNS Electric Mobility</p>
+                    <p class="text-sm text-slate-600 leading-snug">Built IoT-enabled ride-sharing platforms using
+                        Flutter and custom asset tracking integrations.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="text-[10px] font-black text-slate-400 uppercase">2018 — 2019</span>
+                    <h3 class="font-extrabold text-lg mt-1">Full Stack Developer</h3>
+                    <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">Hyper</p>
+                    <p class="text-sm text-slate-600 leading-snug">Built micro-bots using Arduino and Raspberry Pi
+                        environments. Developed Flutter, Firebase, and Python-based Home Automation instruments.
+                        Built and maintained WordPress and Shopify websites for various organizations.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="text-[10px] font-black text-slate-400 uppercase">2017 — 2018</span>
+                    <h3 class="font-extrabold text-lg mt-1">Java Enterprise Dev</h3>
+                    <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">NIIT Limited</p>
+                    <p class="text-sm text-slate-600 leading-snug">Intensive enterprise integrations focused on Spring,
+                        Hibernate, and automated CI/CD pipelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Palette -->
+    <section id="skills" class="px-6 py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-2xl font-extrabold">Technical Palette</h2>
+                <div class="h-px flex-1 mx-6 bg-slate-200 hidden md:block"></div>
+                <span class="text-[10px] font-black text-slate-300 uppercase tracking-widest">Industry Standards</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="app-card p-7 border-none shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-tighter mb-4">Mobile Development
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Flutter &
+                            Dart</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">VS
+                            Code</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">HTML,
+                            CSS, JS</span>
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">SQLite</span>
+                    </div>
+                </div>
+                <div class="app-card p-7 border-none shadow-sm hover:shadow-xl transition-all">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-tighter mb-4">Enterprise
+                        Architecture</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Java
+                            EE</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Spring
+                            Boot</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">RHCA
+                            DevOps</span>
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Microservices</span>
+                    </div>
+                </div>
+                <div class="app-card p-7 border-none shadow-sm hover:shadow-xl transition-all">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-tighter mb-4">Cloud & DevOps</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">GCP</span>
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Firebase</span>
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">CI/CD</span>
+                        <span
+                            class="px-3 py-1.5 bg-slate-100 rounded-xl text-[11px] font-bold text-slate-600">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 py-16 bg-white rounded-[48px]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl font-extrabold mb-2">Featured Projects</h2>
+                <p class="text-slate-500 text-sm">Real-world applications used by millions of users.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="app-card p-4 hover:-translate-y-2">
+                    <div class="project-thumbnail mb-4 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                            alt="Canara ai1" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 left-3 px-3 py-1 bg-blue-600 text-white text-[9px] font-bold rounded-full uppercase">
+                            Super App</div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-extrabold text-lg mb-2">Canara ai1 Super App</h3>
+                        <p class="text-xs text-slate-500 mb-6 leading-relaxed">The flagship banking application for
+                            Canara Bank. Orchestrated frontend architecture for 360+ features and UPI integrations.</p>
+                        <div class="flex gap-2">
+                            <a href="https://apps.apple.com/in/app/canara-ai1-mobile-banking-app/id1408607550"
+                                class="flex-1 bg-slate-900 text-white text-center py-2.5 rounded-xl text-[10px] font-bold hover:bg-blue-600 transition">App
+                                Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.canarabank.mobility"
+                                class="flex-1 bg-slate-100 text-slate-900 text-center py-2.5 rounded-xl text-[10px] font-bold hover:bg-slate-200 transition">Play
+                                Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="app-card p-4 hover:-translate-y-2">
+                    <div class="project-thumbnail mb-4 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+                            alt="EV Platform" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 left-3 px-3 py-1 bg-green-600 text-white text-[9px] font-bold rounded-full uppercase">
+                            EV Mobility</div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-extrabold text-lg mb-2">Supreme Energy Solutions</h3>
+                        <p class="text-xs text-slate-500 mb-6 leading-relaxed">Built AI-enabled query platform
+                            for BLESS products. Includes real-time asset tracking and battery enhancer automation.</p>
+                        <div class="flex gap-2">
+                            <!-- <a href="#"
+                                class="flex-1 bg-slate-100 text-slate-900 text-center py-2.5 rounded-xl text-[10px] font-bold hover:bg-slate-200 transition">Play
+                                Store</a> -->
+                            <a href="https://supremeenergysolutions.co.in/" target="_blank"
+                                class="flex-1 border border-slate-200 text-slate-900 text-center py-2.5 rounded-xl text-[10px] font-bold hover:bg-slate-50 transition">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="app-card p-4 hover:-translate-y-2">
+                    <div class="project-thumbnail mb-4 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800"
+                            alt="Asset Tracker" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 left-3 px-3 py-1 bg-purple-600 text-white text-[9px] font-bold rounded-full uppercase">
+                            Enterprise</div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-extrabold text-lg mb-2">Enterprise IoT Dashboard</h3>
+                        <p class="text-xs text-slate-500 mb-6 leading-relaxed">Full-stack asset tracking solution
+                            featuring custom protocols and real-time data visualization via Flutter Web.</p>
+                        <div class="flex gap-2">
+                            <a href="https://karthikrocksta.github.io/gallery/" target="_blank"
+                                class="w-full bg-slate-900 text-white text-center py-2.5 rounded-xl text-[10px] font-bold hover:bg-purple-600 transition">View
+                                Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="px-6 py-16 bg-slate-900 text-white rounded-t-[48px]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-extrabold mb-8">Education</h2>
+                <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/[0.08] transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-xl">Noida International University</h4>
+                        <span class="text-[10px] font-black px-2 py-1 bg-blue-600 rounded-md">2011-15</span>
+                    </div>
+                    <p class="text-blue-400 text-sm font-bold uppercase tracking-wide">B.Tech in Mechanical Engineering
+                    </p>
+                    <p class="text-slate-400 text-xs mt-4 leading-relaxed">Transitioned from physical structural
+                        engineering to digital architecture, maintaining a focus on performance and efficiency.</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-extrabold mb-8">Professional Recognition</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-5 bg-white/5 rounded-2xl border border-white/10">
+                        <div
+                            class="w-12 h-12 bg-red-600/20 text-red-500 rounded-xl flex items-center justify-center text-xs font-black">
+                            RHCA</div>
+                        <div>
+                            <p class="text-sm font-bold">Red Hat Certified Architect</p>
+                            <p class="text-[10px] text-slate-500 font-bold uppercase">DevOps Concentration</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-5 bg-white/5 rounded-2xl border border-white/10">
+                        <div
+                            class="w-12 h-12 bg-blue-600/20 text-blue-500 rounded-xl flex items-center justify-center text-xs font-black">
+                            FLTR</div>
+                        <div>
+                            <p class="text-sm font-bold">Flutter Certified Developer</p>
+                            <p class="text-[10px] text-slate-500 font-bold uppercase">Multi-Platform Architecture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-slate-900 text-white py-20 px-6 rounded-t-[48px]">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl font-black mb-8">Ready to build your next big idea?</h2>
+                <button onclick="openModal()"
+                    class="bg-blue-600 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-2xl shadow-blue-500/20">Let's
+                    Talk Business</button>
+                <div
+                    class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500">Built with 💙 by Karthik
+                        Krishna
+                        Kumar • 2026</p>
+                    <div class="flex gap-6 text-[10px] font-black uppercase text-slate-400">
+                        <a href="https://www.linkedin.com/in/karthikkkumar" target="_blank"
+                            class="hover:text-white">LinkedIn</a>
+                        <a href="https://www.github.com/karthikrocksta" target="_blank"
+                            class="hover:text-white">GitHub</a>
+                        <a href="https://www.x.com/karthikrocksta" target="_blank" class="hover:text-white">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal"
+        class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex items-end md:items-center justify-center p-4">
+        <div
+            class="bg-white w-full max-w-lg rounded-t-[32px] md:rounded-[32px] shadow-2xl overflow-hidden animate-in slide-in-from-bottom-20">
+            <div class="p-8 pb-0 flex justify-between items-center">
+                <div>
+                    <h3 class="text-2xl font-black">Work with Me</h3>
+                    <p class="text-xs text-slate-400 font-bold mt-1">Direct to Karthik's WhatsApp</p>
+                </div>
+                <button onclick="closeModal()"
+                    class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-900 hover:rotate-90 transition-transform">✕</button>
+            </div>
+            <form onsubmit="handleWA(event)" class="p-8 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-black text-slate-400 uppercase ml-1">Your Name</label>
+                        <input type="text" id="wa-name" placeholder="John Doe" required
+                            class="w-full p-4 bg-slate-50 rounded-2xl border border-slate-100 text-sm focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all outline-none">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-black text-slate-400 uppercase ml-1">Interest</label>
+                        <select id="wa-interest"
+                            class="w-full p-4 bg-slate-50 rounded-2xl border border-slate-100 text-sm focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all outline-none">
+                            <option>App Development</option>
+                            <option>Fintech Consulting</option>
+                            <option>DevOps / Cloud</option>
+                            <option>E-commerce App</option>
+                            <option>Custom IoT Solution</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-black text-slate-400 uppercase ml-1">Project Details</label>
+                    <textarea id="wa-msg" placeholder="I'm looking for a scalable mobile architecture..." required
+                        rows="4"
+                        class="w-full p-4 bg-slate-50 rounded-2xl border border-slate-100 text-sm focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all outline-none"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold text-sm shadow-xl shadow-blue-200 hover:bg-slate-900 transition-colors flex items-center justify-center gap-3">
+                    Submit Project Inquiry
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.185-.573c.948.517 2.094.894 3.145.894 3.181 0 5.767-2.587 5.768-5.766 0-3.181-2.587-5.766-5.767-5.766zm3.29 8.087c-.147.42-.763.79-1.057.84-.29.046-.583.08-.855.08-.34 0-.792-.05-1.398-.29-1.087-.43-1.846-1.307-2.394-2.101-.58-.842-1.025-1.815-1.025-2.84 0-1.027.533-1.597.91-1.976.252-.252.56-.378.84-.378.084 0 .162.003.23.012.235.027.35.04.505.405.19.458.653 1.586.71 1.7.056.113.094.245.018.396-.074.15-.112.245-.226.377-.113.132-.24.293-.34.396-.113.113-.23.235-.1.458.132.226.585.962 1.255 1.56.86.765 1.583.997 1.81.1.226.113.483.264.634.415.15.151.245.32.113.585-.132.264-.585.584-1.026.791z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AI Bot Bottom Sheet -->
+    <div id="ai-bot-wrapper">
+        <button onclick="toggleBot()"
+            class="fixed bottom-6 right-6 w-16 h-16 bg-slate-900 rounded-[24px] flex items-center justify-center shadow-2xl z-[60] hover:scale-110 active:scale-95 transition-all group border-4 border-white">
+            <div id="bot-status-dot"
+                class="absolute top-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+            <svg id="icon-open" width="28" height="28" fill="white" viewBox="0 0 24 24">
+                <path
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-3 7h6v2h-6v-2z" />
+            </svg>
+            <span id="icon-close" class="hidden text-white font-bold text-xl">✕</span>
+        </button>
+
+        <div id="chat-window"
+            class="fixed bottom-0 right-0 left-0 md:left-auto md:right-6 md:bottom-24 md:w-[400px] bg-white md:rounded-[32px] rounded-t-[32px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col z-[55] bot-slide-up transition-all duration-300 border border-slate-100">
+            <!-- Bot Header -->
+            <div class="bg-slate-900 px-6 py-5 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="relative w-11 h-11 rounded-2xl bg-blue-600 flex items-center justify-center text-sm font-bold border border-white/10">
+                        <img src="https://ui-avatars.com/api/?name=Karthik+Krishna+Kumar&background=2563eb&color=fff"
+                            class="rounded-2xl w-full h-full object-cover">
+                        <div
+                            class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-slate-900">
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm tracking-tight">Karthik's AI Bot</p>
+                        <p class="text-[9px] text-slate-400 uppercase font-black tracking-widest">Active & Ready</p>
+                    </div>
+                </div>
+                <button onclick="toggleBot()" class="p-2 hover:bg-white/10 rounded-full transition"><svg width="18"
+                        height="18" fill="white" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></button>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messages" class="h-[400px] overflow-y-auto p-6 space-y-4 bg-slate-50/30 text-xs">
+                <div
+                    class="bg-white p-4 rounded-3xl rounded-tl-none border border-slate-100 shadow-sm max-w-[85%] leading-relaxed">
+                    Hello! I'm Karthik's automated assistant. I can tell you about his projects, skills, or even his
+                    switch from Mechanical Engineering.
+                    <br><br>
+                    <b>How can I help you today?</b>
+                </div>
+
+                <!-- FAQ Quick Actions -->
+                <div id="quick-actions" class="flex flex-wrap gap-2 pt-2">
+                    <div onclick="handleQuickAction('Current Role')"
+                        class="chip px-4 py-2 bg-white rounded-full text-[10px] font-bold shadow-sm">Current Role</div>
+                    <div onclick="handleQuickAction('Recent Projects')"
+                        class="chip px-4 py-2 bg-white rounded-full text-[10px] font-bold shadow-sm">Recent Projects
+                    </div>
+                    <div onclick="handleQuickAction('Mechanical to IT?')"
+                        class="chip px-4 py-2 bg-white rounded-full text-[10px] font-bold shadow-sm">Mechanical to IT?
+                    </div>
+                    <div onclick="handleQuickAction('Tech Stack')"
+                        class="chip px-4 py-2 bg-white rounded-full text-[10px] font-bold shadow-sm">Tech Stack</div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div id="typing" class="hidden px-6 py-2">
+                <div
+                    class="flex gap-1.5 items-center p-2 bg-white rounded-full w-fit border border-slate-100 shadow-sm">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <!-- Input Bar -->
+            <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+                <input type="text" id="bot-input" placeholder="Type a question..."
+                    class="flex-1 bg-slate-50 rounded-2xl px-5 py-3.5 text-xs outline-none focus:bg-white focus:ring-1 focus:ring-blue-100 transition-all"
+                    onkeypress="if(event.key === 'Enter') chat()">
+                <button onclick="chat()"
+                    class="bg-slate-900 w-12 h-12 rounded-2xl text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M5 12h14m-7-7l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('contact-modal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('contact-modal').style.display = 'none'; }
+
+        function handleWA(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const interest = document.getElementById('wa-interest').value;
+            const msg = document.getElementById('wa-msg').value;
+
+            const text = `*PORTFOLIO INQUIRY*%0A*Name:* ${name}%0A*Interest:* ${interest}%0A*Message:* ${msg}%0A%0A/nSent from Karthik's Portfolio`;
+            window.open(`https://wa.me/919971609929?text=${text}`, '_blank');
+            closeModal();
+        }
+
+        function toggleBot() {
+            const win = document.getElementById('chat-window');
+            const isOpen = win.style.display === 'flex';
+            win.style.display = isOpen ? 'none' : 'flex';
+            document.getElementById('icon-open').style.display = isOpen ? 'block' : 'none';
+            document.getElementById('icon-close').style.display = isOpen ? 'none' : 'block';
+        }
+
+        function handleQuickAction(action) {
+            document.getElementById('bot-input').value = action;
+            chat();
+        }
+
+        function chat() {
+            const input = document.getElementById('bot-input');
+            const msg = input.value.trim().toLowerCase();
+            if (!msg) return;
+
+            const box = document.getElementById('messages');
+            box.innerHTML += `<div class="flex justify-end"><div class="bg-blue-600 text-white p-3.5 rounded-3xl rounded-tr-none shadow-md max-w-[85%] leading-relaxed">${input.value}</div></div>`;
+            input.value = "";
+            box.scrollTop = box.scrollHeight;
+
+            document.getElementById('typing').classList.remove('hidden');
+
+            let reply = "That's a great question! I'll record that for Karthik to follow up on.";
+
+            if (msg.includes('mech') || msg.includes('it') || msg.includes('career')) {
+                reply = "Karthik's switch from Mechanical Engineering (NIU '15) to IT was driven by his passion for structural logic in code. Started with Java Enterprise training and hasn't looked back!";
+            } else if (msg.includes('npst') || msg.includes('role') || msg.includes('current')) {
+                reply = "Currently, Karthik is a Sr. Software Developer at NPST Ltd, leading frontend architecture for large-scale banking apps like Canara ai1.";
+            } else if (msg.includes('tech') || msg.includes('stack') || msg.includes('skill')) {
+                reply = "Karthik's primary toolkit includes Flutter/Dart for mobile, Java (Spring) for backend, and Red Hat tools for DevOps. Specializes in 'Fintech Infrastructure'.";
+            } else if (msg.includes('project') || msg.includes('recent')) {
+                reply = "Karthik's biggest recent project is the Canara ai1 Super App, which handles 360+ features and serves millions of users daily.";
+            } else if (msg.includes('work') || msg.includes('project')) {
+                reply = "Karthik's most recent major work is the Canara ai1 Super App, along with IoT platforms for EV mobility.";
+            } else if (msg.includes('available') || msg.includes('hire')) {
+                reply = "Karthik is currently open to architectural consultations and senior leadership roles in Fintech.";
+            }
+
+            // Remove quick actions once the conversation starts
+            const qa = document.getElementById('quick-actions');
+            if (qa) qa.remove();
+
+            setTimeout(() => {
+                document.getElementById('typing').classList.add('hidden');
+                box.innerHTML += `<div class="flex justify-start"><div class="bg-white p-4 rounded-3xl rounded-tl-none shadow-sm border border-slate-100 text-slate-700 max-w-[85%] leading-relaxed">${reply}</div></div>`;
+                box.scrollTop = box.scrollHeight;
+            }, 1200);
+        }
+    </script>
+</body>
+
+</html>
