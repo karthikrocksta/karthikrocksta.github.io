@@ -1,0 +1,174 @@
+{
+  "profile": {
+    "name": "Karthik Krishna Kumar",
+    "handle": "karthikrocksta",
+    "title": "Solutions Architect",
+    "tagline": "Mechanical Engineer turned Digital Architect. I build scalable mobile and web apps used by millions of people.",
+    "bio": "Skilled in problem-solving, debugging, and collaborating within agile teams to deliver high-quality Flutter applications. Adept at integrating mechanical engineering knowledge with software development to create innovative, efficient solutions. When I'm not working with data, I enjoy playing musical instruments. I love the 'aha!' moment when effort reveals something new and useful.",
+    "email": "er.karthikkrishnakumar@gmail.com",
+    "location": "India",
+    "availability": "Available for architecture roles",
+    "links": {
+      "github": "https://github.com/karthikrocksta",
+      "linkedin": "https://linkedin.com/in/karthikkkumar",
+      "twitter": "https://x.com/karthikrocksta",
+      "youtube": "https://youtube.com/@pixelriffrush",
+      "website": "https://karthikrocksta.github.io"
+    },
+    "stats": [
+      { "label": "apps shipped", "value": "12+" },
+      { "label": "active users", "value": "5M+" },
+      { "label": "years experience", "value": "8+" },
+      { "label": "github stars", "value": "96" }
+    ]
+  },
+  "experience": [
+    {
+      "role": "Senior Software Developer",
+      "company": "NPST Ltd.",
+      "period": "2021 — 2025",
+      "highlights": [
+        "Built the Canara ai1 super app and the TimePay app",
+        "Owned frontend architecture across 360+ features on a live UPI ecosystem",
+        "Working UPI/NPCI integrations at banking scale"
+      ]
+    },
+    {
+      "role": "Senior Application Engineer",
+      "company": "TNS Electric Mobility",
+      "period": "2019 — 2021",
+      "highlights": [
+        "Built IoT-enabled ride-sharing platforms in Flutter",
+        "Custom asset-tracking hardware integrations"
+      ]
+    },
+    {
+      "role": "Full Stack / Mechatronics Developer",
+      "company": "Matra Ventures LLP (Hyper)",
+      "period": "2018 — 2019",
+      "highlights": [
+        "Built micro-bots on Arduino and Raspberry Pi",
+        "Flutter, Firebase and Python based home-automation instruments",
+        "Built and maintained WordPress and Shopify sites for clients"
+      ]
+    },
+    {
+      "role": "Marketing Engineeer and Floor Supervisor",
+      "company": "PPS International",
+      "period": "2017 — 2018",
+      "highlights": [
+        "Engineer - Marketing & Sales",
+        "Supervised the Production Floor (Cable Harness)",
+        "Managed techinal sales"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "group": "Mobile development",
+      "items": ["Flutter (expert)", "Dart", "HTML5", "CSS3", "JavaScript"]
+    },
+    {
+      "group": "Enterprise architecture",
+      "items": ["Java EE", "Spring Boot", "Clean architecture", "BLoC / GetX / Provider / Riverpod"]
+    },
+    {
+      "group": "Cloud & DevOps",
+      "items": ["Google Cloud Platform", "Firebase", "CI/CD pipelining", "Git"]
+    },
+    {
+      "group": "Fintech & IoT",
+      "items": ["UPI / NPCI integration", "Payment security", "Arduino", "Raspberry Pi"]
+    },
+    {
+      "group": "Data & automation",
+      "items": ["Python", "SQL", "Excel", "Tableau"]
+    },
+    {
+      "group": "Also comfortable in",
+      "items": ["C++", "Go", "PHP", "Bash", "MySQL"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Canara ai1 super app",
+      "category": "Super app · Banking",
+      "description": "The flagship mobile banking app for Canara Bank. Architected the frontend for 360+ features and UPI integrations serving millions of users.",
+      "links": [
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/canara-ai1-mobile-banking-app/id1408607550" },
+        { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.canarabank.mobility" }
+      ]
+    },
+    {
+      "name": "TimePay: UPI, Bills & Rewards",
+      "category": "Super app · Banking",
+      "description": "TimePay is your trusted partner for seamless and secure UPI transactions, recharges, and bill payments. Designed for convenience and rewards, it's the smart way to manage your financial needs.",
+      "links": [
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/timepay/id1479721596" },
+        { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.npst.timepay.society&hl=en_IN" }
+      ]
+    },
+    {
+      "name": "Supreme Energy Solutions",
+      "category": "EV mobility · IoT",
+      "description": "AI-enabled query platform for BLESS products, with real-time asset tracking and battery-enhancer automation.",
+      "links": [
+        { "label": "Website", "url": "https://supremeenergysolutions.co.in/" }
+      ]
+    },
+    {
+      "name": "Flutter gallery",
+      "category": "Enterprise · Asset tracking",
+      "description": "Full-stack asset-tracking solution with custom protocols and real-time data visualization, built with Flutter Web.",
+      "links": [
+        { "label": "Live project", "url": "https://karthikrocksta.github.io/gallery" },
+        { "label": "Source", "url": "https://github.com/karthikrocksta/gallery" }
+      ]
+    },
+    {
+      "name": "SolvIQ",
+      "category": "In progress · AI",
+      "description": "A real-time problem-solving assistant. Currently in active development.",
+      "links": [
+        { "label": "Live project", "url": "https://github.com/karthikrocksta/SolvIQ" },
+        { "label": "Source", "url": "https://github.com/karthikrocksta/SolvIQ" }
+      ]
+    },
+    {
+      "name": "LexGuide",
+      "category": "In progress · Legal tech",
+      "description": "An interactive reference tool for the IPC and BNS (Indian criminal law). Currently in active development.",
+      "links": [
+        { "label": "Live project", "url": "https://github.com/karthikrocksta/LexGuide" },
+        { "label": "Source", "url": "https://github.com/karthikrocksta/LexGuide" }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech, Mechanical Engineering",
+      "school": "Noida International University",
+      "period": "2011 — 2015",
+      "detail": "Transitioned from physical structural engineering to digital architecture, keeping a focus on performance and efficiency."
+    },
+    {
+      "degree": "Java Enterprise Developer with DevOps",
+      "school": "NIIT Limited",
+      "period": "2017 — 2018",
+      "detail": "Enterprise Java and DevOps foundations."
+    }
+  ],
+  "certifications": [
+    "Flutter Certified Developer — multi-platform architecture",
+    "Flutter Essential Training: Building for Multiple Platforms (iOS, Android, Web)",
+    "Embedded Systems & Robotics Certification",
+    "Ethical Hacking & Security Certification"
+  ],
+  "repos": [
+    { "name": "gallery", "description": "Full-stack asset tracking, Flutter Web", "language": "JavaScript", "url": "https://github.com/karthikrocksta/gallery" },
+    { "name": "ses_landing", "description": "Landing site for Supreme Energy Solutions", "language": "HTML", "url": "https://github.com/karthikrocksta/ses_landing" },
+    { "name": "karthikrocksta.github.io", "description": "This portfolio's previous incarnation", "language": "HTML", "url": "https://github.com/karthikrocksta/karthikrocksta.github.io" },
+    { "name": "miniature-pancake", "description": "5 stars on GitHub", "language": "", "url": "https://github.com/karthikrocksta/miniature-pancake" }
+  ]
+}
+
