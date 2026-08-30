@@ -3,7 +3,7 @@
     "name": "Karthik Krishna Kumar",
     "handle": "karthikrocksta",
     "title": "Solutions Architect",
-    "tagline": "Mechanical Engineer turned Digital Architect. I build scalable mobile and web apps used by millions of people.",
+    "tagline": "Mechanical Engineer turned Digital Architect. I build scalable mobile and web apps used by significant number of people.",
     "bio": "Skilled in problem-solving, debugging, and collaborating within agile teams to deliver high-quality Flutter applications. Adept at integrating mechanical engineering knowledge with software development to create innovative, efficient solutions. When I'm not working with data, I enjoy playing musical instruments. I love the 'aha!' moment when effort reveals something new and useful.",
     "email": "er.karthikkrishnakumar@gmail.com",
     "location": "India",
@@ -101,7 +101,7 @@
     },
     {
       "name": "TimePay: UPI, Bills & Rewards",
-      "category": "Super app · Banking",
+      "category": "UPI Payments app · Banking",
       "description": "TimePay is your trusted partner for seamless and secure UPI transactions, recharges, and bill payments. Designed for convenience and rewards, it's the smart way to manage your financial needs.",
       "links": [
         { "label": "App Store", "url": "https://apps.apple.com/in/app/timepay/id1479721596" },
@@ -109,11 +109,11 @@
       ]
     },
     {
-      "name": "Supreme Energy Solutions",
-      "category": "EV mobility · IoT",
+      "name": "Venkrish Enterprises",
+      "category": "Mobility · IoT",
       "description": "AI-enabled query platform for BLESS products, with real-time asset tracking and battery-enhancer automation.",
       "links": [
-        { "label": "Website", "url": "https://supremeenergysolutions.co.in/" }
+        { "label": "Website", "url": "https://venkrish-enterprises.vercel.app/" }
       ]
     },
     {
@@ -127,10 +127,10 @@
     },
     {
       "name": "SolvIQ",
-      "category": "In progress · AI",
+      "category": "In progress · AI assistant",
       "description": "A real-time problem-solving assistant. Currently in active development.",
       "links": [
-        { "label": "Live project", "url": "https://github.com/karthikrocksta/SolvIQ" },
+        { "label": "Live project", "url": "https://karthikrocksta.github.io/SolvIQ" },
         { "label": "Source", "url": "https://github.com/karthikrocksta/SolvIQ" }
       ]
     },
@@ -139,7 +139,7 @@
       "category": "In progress · Legal tech",
       "description": "An interactive reference tool for the IPC and BNS (Indian criminal law). Currently in active development.",
       "links": [
-        { "label": "Live project", "url": "https://github.com/karthikrocksta/LexGuide" },
+        { "label": "Live project", "url": "https://karthikrocksta.github.io/LexGuide" },
         { "label": "Source", "url": "https://github.com/karthikrocksta/LexGuide" }
       ]
     }
@@ -154,7 +154,7 @@
     {
       "degree": "Java Enterprise Developer with DevOps",
       "school": "NIIT Limited",
-      "period": "2017 — 2018",
+      "period": "2015 — 2017",
       "detail": "Enterprise Java and DevOps foundations."
     }
   ],
@@ -165,10 +165,10 @@
     "Ethical Hacking & Security Certification"
   ],
   "repos": [
-    { "name": "gallery", "description": "Full-stack asset tracking, Flutter Web", "language": "JavaScript", "url": "https://github.com/karthikrocksta/gallery" },
-    { "name": "ses_landing", "description": "Landing site for Supreme Energy Solutions", "language": "HTML", "url": "https://github.com/karthikrocksta/ses_landing" },
-    { "name": "karthikrocksta.github.io", "description": "This portfolio's previous incarnation", "language": "HTML", "url": "https://github.com/karthikrocksta/karthikrocksta.github.io" },
-    { "name": "miniature-pancake", "description": "5 stars on GitHub", "language": "", "url": "https://github.com/karthikrocksta/miniature-pancake" }
-  ]
+    { "name": "team-workspace-app", "description": "A lightweight Flutter app built for the Tech Transient — Flutter Machine Test.", "language": "Flutter", "url": "https://github.com/karthikrocksta/team-workspace-app" },
+    { "name": "karthikrocksta.github.io", "description": "This portfolio's incarnation", "language": "", "url": "https://github.com/karthikrocksta/karthikrocksta.github.io" },
+    { "name": "miniature-pancake", "description": "5 stars on GitHub", "language": "", "url": "https://github.com/karthikrocksta/miniature-pancake" },
+    { "name": "hello-world", "description": "Hello World", "language": "Markdown", "url": "https://github.com/karthikrocksta/hello-world" }
+]
 }
 
